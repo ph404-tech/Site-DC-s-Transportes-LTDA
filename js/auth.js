@@ -18,18 +18,14 @@ const Auth = {
             return false;
         }
 
-        // Auto-approve the specific admin email if they register
-        const status = email === 'pedro.silva.vrrm@gmail.com' ? 'active' : 'pending';
+        // Auto-approve ALL users
+        const status = 'active';
 
         const newUser = { name, email, password, status };
         users.push(newUser);
         localStorage.setItem('ets2_users', JSON.stringify(users));
 
-        if (status === 'pending') {
-            alert('Cadastro realizado! Para liberar seu acesso, peça permissão ao administrador no email: pedro.silva.vrrm@gmail.com');
-        } else {
-            alert('Cadastro de Administrador realizado com sucesso!');
-        }
+        alert('Cadastro realizado com sucesso! Você já pode entrar.');
 
         window.location.href = 'login.html';
         return true;
