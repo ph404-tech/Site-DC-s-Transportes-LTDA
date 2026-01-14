@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downloads - DC's Transportes LTDA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .downloads-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .download-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .download-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-image {
+            height: 160px;
+            background: var(--bg-hover);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 4rem;
+        }
+
+        /* Specific card images */
+        .card-image.app {
+            background: linear-gradient(45deg, #1e293b, #0f172a);
+            color: var(--accent);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-content h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .card-content p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .download-btn:hover {
+            background: var(--accent);
+            color: #000;
+            border-color: var(--accent);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="ph ph-truck"></i>
+                <span>DC's Transportes</span>
+            </div>
+
+
+
+            <a href="index.html" style="text-decoration: none;">
+                <button class="icon-btn"
+                    style="width: 100%; text-align: left; padding-left: 0; color: var(--text-secondary);">
+                    <i class="ph ph-house"></i> Início
+                </button>
+            </a>
+
+            <!-- Downloads Link (Active) -->
+            <button class="icon-btn"
+                style="width: 100%; text-align: left; padding-left: 0; color: var(--accent); background: var(--bg-hover);">
+                <i class="ph ph-download-simple"></i> Downloads
+            </button>
+
+            <a href="mods.html" style="text-decoration: none;">
+                <button class="icon-btn"
+                    style="width: 100%; text-align: left; padding-left: 0; color: var(--text-secondary); margin-top: 0.5rem;">
+                    <i class="ph ph-cube"></i> Mods
+                </button>
+            </a>
+
+            <a href="drivers.html" style="text-decoration: none;">
+                <button class="icon-btn"
+                    style="width: 100%; text-align: left; padding-left: 0; color: var(--text-secondary); margin-top: 0.5rem;">
+                    <i class="ph ph-users"></i> Motoristas
+                </button>
+            </a>
+
+            <a href="company.html" style="text-decoration: none;">
+                <button class="icon-btn"
+                    style="width: 100%; text-align: left; padding-left: 0; margin-top: 0.5rem; color: var(--text-secondary);">
+                    <i class="ph ph-buildings"></i> Empresa
+                </button>
+            </a>
+
+            <a href="fines.html" style="text-decoration: none;">
+                <button class="icon-btn"
+                    style="width: 100%; text-align: left; padding-left: 0; color: var(--text-secondary); margin-top: 0.5rem;">
+                    <i class="ph ph-warning-circle"></i> Multas
+                </button>
+            </a>
+
+            <!-- Admin Link (Only visible to Admin) -->
+            <a href="admin.html" id="nav-admin" style="text-decoration: none; display: none;">
+                <button class="icon-btn"
+                    style="width: 100%; text-align: left; padding-left: 0; color: var(--accent); background: var(--bg-hover); margin-top: 0.5rem;">
+                    <i class="ph ph-shield-check"></i> Admin
+                </button>
+            </a>
+
+            <button id="btn-logout" class="icon-btn"
+                style="margin-top: auto; color: var(--danger); width: 100%; text-align: left; padding-left: 0;">
+                <i class="ph ph-sign-out"></i> Sair
+            </button>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="content-area">
+            <header>
+                <h1>Central de Downloads</h1>
+                <a href="profile.html" style="text-decoration: none; color: inherit;">
+                    <div class="user-profile" title="Meu Perfil">
+                        <span>Motorista</span>
+                        <div class="avatar"><i class="ph ph-user"></i></div>
+                    </div>
+                </a>
+            </header>
+
+            <div class="downloads-grid">
+                <!-- App Desktop -->
+                <div class="download-card">
+                    <div class="card-image app">
+                        <i class="ph ph-desktop"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>App Desktop DC's</h3>
+                        <p>O aplicativo oficial para registrar suas viagens automaticamente sem precisar abrir o site.
+                            Leve e rápido.</p>
+                        <a href="#" class="download-btn" onclick="alert('Em breve!'); return false;">
+                            <i class="ph ph-download"></i> Baixar para Windows
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Plugin Telemetria -->
+                <div class="download-card">
+                    <div class="card-image" style="background: linear-gradient(45deg, #ea580c, #c2410c); color: white;">
+                        <i class="ph ph-plug"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Plugin de Telemetria (DLL)</h3>
+                        <p>Essencial para o App Desktop funcionar. Instale na pasta do jogo para sincronizar seus dados.
+                        </p>
+                        <a href="telemetry_plugin/COMO_COMPILAR.md" target="_blank" class="download-btn">
+                            <i class="ph ph-file-code"></i> Ver Instruções e Código
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

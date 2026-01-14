@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - DC's Transportes LTDA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body class="auth-body">
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <i class="ph ph-truck"></i>
+                <h1>Login</h1>
+                <p>Bem-vindo de volta, motorista.</p>
+            </div>
+
+            <form id="login-form">
+                <div class="form-group">
+                    <label>Email</label>
+                    <div class="input-icon-wrapper">
+                        <i class="ph ph-envelope"></i>
+                        <input type="email" id="login-email" placeholder="seu@email.com" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Senha</label>
+                    <div class="input-icon-wrapper">
+                        <i class="ph ph-lock"></i>
+                        <input type="password" id="login-password" placeholder="••••••••" required>
+                    </div>
+                </div>
+
+                <div class="auth-actions">
+                    <button type="submit" class="submit-btn">Entrar</button>
+                </div>
+
+                <p class="auth-footer">
+                    Não tem conta? <a href="register.html">Cadastre-se</a>
+                </p>
+            </form>
+        </div>
+    </div>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>
