@@ -86,13 +86,17 @@
 <body>
     <div class="app-container">
         <!-- Sidebar -->
-        <nav class="sidebar">
+        <!-- Overlay -->
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+        <!-- Sidebar -->
+        <nav class="sidebar" id="sidebar">
             <div class="logo">
                 <i class="ph ph-truck"></i>
                 <span>DC's Transportes</span>
             </div>
 
-
+            <!-- ... sidebar links ... -->
 
             <a href="index.html" style="text-decoration: none;">
                 <button class="icon-btn"
@@ -152,7 +156,12 @@
         <!-- Main Content -->
         <main class="content-area">
             <header>
-                <h1>Central de Mods</h1>
+                <div style="display: flex; align-items: center;">
+                    <button class="mobile-menu-btn" id="mobile-menu-btn">
+                        <i class="ph ph-list"></i>
+                    </button>
+                    <h1>Central de Mods</h1>
+                </div>
                 <a href="profile.html" style="text-decoration: none; color: inherit;">
                     <div class="user-profile" title="Meu Perfil">
                         <span>Motorista</span>

@@ -104,13 +104,17 @@
 <body>
     <div class="app-container">
         <!-- Sidebar -->
-        <nav class="sidebar">
+        <!-- Overlay -->
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+        <!-- Sidebar -->
+        <nav class="sidebar" id="sidebar">
             <div class="logo">
                 <i class="ph ph-truck"></i>
                 <span>DC's Transportes</span>
             </div>
 
-
+            <!-- ... sidebar links ... -->
 
             <a href="index.html" style="text-decoration: none;">
                 <button class="icon-btn"
@@ -154,8 +158,8 @@
                 </button>
             </a>
 
-            <!-- Admin Link (Only visible to Admin) -->
-            <a href="admin.html" id="nav-admin" style="text-decoration: none; display: none;">
+            <!-- Admin Link (Active) -->
+            <a href="admin.html" id="nav-admin" style="text-decoration: none;">
                 <button class="icon-btn"
                     style="width: 100%; text-align: left; padding-left: 0; color: var(--accent); background: var(--bg-hover); margin-top: 0.5rem;">
                     <i class="ph ph-shield-check"></i> Admin
@@ -171,7 +175,12 @@
         <!-- Main Content -->
         <main class="content-area">
             <header>
-                <h1>Painel de Administração</h1>
+                <div style="display: flex; align-items: center;">
+                    <button class="mobile-menu-btn" id="mobile-menu-btn">
+                        <i class="ph ph-list"></i>
+                    </button>
+                    <h1>Painel de Administração</h1>
+                </div>
                 <div class="user-profile">
                     <span>Admin</span>
                     <div class="avatar"><i class="ph ph-user"></i></div>
@@ -180,7 +189,8 @@
 
             <section class="admin-section">
                 <h2>Solicitações de Acesso</h2>
-                <p style="color: var(--text-secondary); margin-bottom: 2rem;">Aprove ou rejeite novos motoristas.</p>
+                <p style="color: var(--text-secondary); margin-bottom: 2rem;">Aprove ou rejeite novos motoristas.
+                </p>
 
                 <div id="pending-list" class="admin-grid">
                     <!-- Loaded via JS -->

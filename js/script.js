@@ -188,6 +188,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Event Listeners ---
     if (btnClearHistory) btnClearHistory.addEventListener('click', clearHistory);
 
+    // Mobile Menu Logic
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
+
+    function toggleMobileMenu() {
+        sidebar.classList.toggle('active');
+        sidebarOverlay.classList.toggle('active');
+    }
+
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    }
+
+    if (sidebarOverlay) {
+        sidebarOverlay.addEventListener('click', toggleMobileMenu);
+    }
+
     // --- Init ---
     if (typeof Auth !== 'undefined' && Auth.getCurrentUser()) {
         const user = Auth.getCurrentUser();

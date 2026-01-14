@@ -126,6 +126,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const name = document.getElementById('reg-name').value;
             const email = document.getElementById('reg-email').value;
             const pass = document.getElementById('reg-password').value;
+            const confirmPass = document.getElementById('reg-confirm-password').value;
+
+            if (pass !== confirmPass) {
+                alert('As senhas não coincidem!');
+                return;
+            }
+
             Auth.register(name, email, pass);
         });
     }
@@ -138,4 +145,22 @@ document.addEventListener('DOMContentLoaded', () => {
             Auth.logout();
         });
     }
+
+    // Password Toggle Logic
+    document.querySelectorAll('.password-toggle').forEach(eyeIcon => {
+        eyeIcon.addEventListener('click', () => {
+            const input = eyeIcon.previousElementSibling;
+            if (input && input.tagName === 'INPUT') {
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    eyeIcon.classList.remove('ph-eye');
+                    eyeIcon.classList.add('ph-eye-slash');
+                } else {
+                    input.type = 'password';
+                    eyeIcon.classList.remove('ph-eye-slash');
+                    eyeIcon.classList.add('ph-eye');
+                }
+            }
+        });
+    });
 });

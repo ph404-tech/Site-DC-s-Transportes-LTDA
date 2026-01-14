@@ -132,14 +132,17 @@
 
 <body>
     <div class="app-container">
+        <!-- Overlay -->
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
         <!-- Sidebar -->
-        <nav class="sidebar">
+        <nav class="sidebar" id="sidebar">
             <div class="logo">
                 <i class="ph ph-truck"></i>
                 <span>DC's Transportes</span>
             </div>
 
-
+            <!-- ... sidebar links ... -->
 
             <a href="index.html" style="text-decoration: none;">
                 <button class="icon-btn"
@@ -147,6 +150,8 @@
                     <i class="ph ph-house"></i> Início
                 </button>
             </a>
+
+            <!-- ... (keep links same) ... -->
 
             <a href="downloads.html" style="text-decoration: none;">
                 <button class="icon-btn"
@@ -200,7 +205,12 @@
         <main class="content-area">
             <header style="display: flex; justify-content: space-between; align-items: center;">
                 <div>
-                    <h1>Nossos Motoristas</h1>
+                    <div style="display: flex; align-items: center;">
+                        <button class="mobile-menu-btn" id="mobile-menu-btn">
+                            <i class="ph ph-list"></i>
+                        </button>
+                        <h1>Nossos Motoristas</h1>
+                    </div>
                     <div style="margin-top: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
                         <label for="month-filter" style="color: var(--text-secondary); font-size: 0.9rem;">Filtrar por
                             Mês:</label>

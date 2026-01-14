@@ -129,8 +129,11 @@
 
 <body>
     <div class="app-container">
+        <!-- Overlay -->
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
         <!-- Sidebar -->
-        <nav class="sidebar">
+        <nav class="sidebar" id="sidebar">
             <div class="logo">
                 <i class="ph ph-truck"></i>
                 <span>DC's Transportes</span>
@@ -196,6 +199,14 @@
 
         <!-- Main Content -->
         <main class="content-area">
+            <header class="mobile-only-header">
+                <div style="display: flex; align-items: center;">
+                    <button class="mobile-menu-btn" id="mobile-menu-btn">
+                        <i class="ph ph-list"></i>
+                    </button>
+                    <h1>Meu Perfil</h1>
+                </div>
+            </header>
             <div class="profile-container">
                 <div class="profile-header">
                     <div class="profile-avatar-large" id="avatar-container"
@@ -262,7 +273,12 @@
                         </div>
                         <div class="form-group">
                             <label>Nova Senha (opcional)</label>
-                            <input type="password" id="edit-password" placeholder="Deixe em branco para não alterar">
+                            <div class="input-icon-wrapper">
+                                <i class="ph ph-lock"></i>
+                                <input type="password" id="edit-password"
+                                    placeholder="Deixe em branco para não alterar">
+                                <i class="ph ph-eye password-toggle"></i>
+                            </div>
                         </div>
                         <button type="submit" class="submit-btn" style="width: auto; padding: 0.75rem 2rem;">Salvar
                             Alterações</button>
